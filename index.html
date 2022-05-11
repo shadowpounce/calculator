@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
+	<title>Calculator</title>
+</head>
+<body>
+	<div id="particles-js"></div>
+	<div class="calculator" id="calculator">
+		<!-- calc navigation bar -->
+		<nav class="calc-nav">
+			<h1 class="nav-time" id="nav-time">
+				 <p class="nav-time__hours"></p>
+				 <span class="nav-time__span">:</span>
+				 <p class="nav-time__minutes"></p>
+				 <span class="nav-time__span">:</span>
+				 <p class="nav-time__seconds"></p>
+			</h1>
+			<!-- light / dark theme -->
+			<div class="nav-btn" id="nav-btn">
+				<svg id="nav-btn__night" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+				<svg id="nav-btn__light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+			</div>
+			<!-- light / dark theme -->
+		</nav>
+		<!-- calc navigation bar -->
+
+		<!-- calc output -->
+		<div class="calc-output" id="calc-output">
+			<p class="calc-out-secondary" id="calc-out-secondary">
+				
+			</p>
+			<p class="calc-out" id="calc-out">
+
+			</p>
+		</div>
+		<!-- calc output -->
+
+		<!-- calc buttons -->
+		<div class="calc-buttons">
+
+			<!-- row -->
+			<div class="btn btn-clear" id="btn-clear" onclick="allClear()"> AC </div>
+			<div class="btn btn-remove" id="btn-remove" onclick="removeNumber()" >
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+					<path d="M576 384C576 419.3 547.3 448 512 448H205.3C188.3 448 172 441.3 160 429.3L9.372 278.6C3.371 272.6 0 264.5 0 256C0 247.5 3.372 239.4 9.372 233.4L160 82.75C172 70.74 188.3 64 205.3 64H512C547.3 64 576 92.65 576 128V384zM271 208.1L318.1 256L271 303C261.7 312.4 261.7 327.6 271 336.1C280.4 346.3 295.6 346.3 304.1 336.1L352 289.9L399 336.1C408.4 346.3 423.6 346.3 432.1 336.1C442.3 327.6 442.3 312.4 432.1 303L385.9 256L432.1 208.1C442.3 199.6 442.3 184.4 432.1 175C423.6 165.7 408.4 165.7 399 175L352 222.1L304.1 175C295.6 165.7 280.4 165.7 271 175C261.7 184.4 261.7 199.6 271 208.1V208.1z"/>
+				</svg>
+			</div>
+			<div class="btn btn-operator" id="btn-operator" onclick="addAction('%')"> % </div>
+			<div class="btn btn-operator" id="btn-operator" onclick="addAction('/')"> / </div>
+			<!-- row -->
+
+			<!-- row -->
+			<div class="btn btn-number" onclick="addNum('7')"> 7 </div>
+			<div class="btn btn-number" onclick="addNum('8')"> 8 </div>
+			<div class="btn btn-number" onclick="addNum('9')"> 9 </div>
+			<div class="btn btn-operator" id="btn-operator" onclick="addAction('X')"> X </div>
+			<!-- row -->
+
+			<!-- row -->
+			<div class="btn btn-number" onclick="addNum('4')"> 4 </div>
+			<div class="btn btn-number" onclick="addNum('5')"> 5 </div>
+			<div class="btn btn-number" onclick="addNum('6')"> 6 </div>
+			<div class="btn btn-operator" id="btn-operator" onclick="addAction('-')"> - </div>
+			<!-- row -->
+
+			<!-- row -->
+			<div class="btn btn-number" onclick="addNum('1')"> 1 </div>
+			<div class="btn btn-number" onclick="addNum('2')"> 2 </div>
+			<div class="btn btn-number" onclick="addNum('3')"> 3 </div>
+			<div class="btn btn-operator" id="btn-operator" onclick="addAction('+')"> + </div>
+			<!-- row -->
+
+			<!-- row -->
+			<div class="btn btn-number" onclick="plusOrMinus()" id="plusOrMinus"> +/- </div>
+			<div class="btn btn-number" onclick="addNum('0')"> 0 </div>
+			<div class="btn btn-number" onclick="addNum('.')" id="dot"> . </div>
+			<div class="btn btn-operator" id="btn-operator" onclick="equal()"> = </div>
+			<!-- row -->
+		</div>
+		<!-- calc buttons -->
+	</div>
+
+	<!-- js -->
+	<script src="js/main.js"></script>
+	<script src="js/particles.js"></script>
+	<script src="js/app.js"></script>
+	<script src="https://kit.fontawesome.com/7017892fd9.js" crossorigin="anonymous"></script>
+</body>
+</html>
