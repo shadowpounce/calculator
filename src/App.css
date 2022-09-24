@@ -1,0 +1,17 @@
+.App {
+  max-width: 375px;
+  background: linear-gradient(191.34deg, #17181a -4.95%, #17181a 103.74%);
+  border-radius: 39px;
+  color: #fff;
+  padding: 35px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+}
+
+@media (max-width: 400px) {
+  .App {
+    max-width: 330px;
+    padding: 25px;
+  }
+}

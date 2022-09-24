@@ -1,0 +1,36 @@
+.output {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 45px;
+  position: relative;
+}
+
+.output .signLabel {
+  position: absolute;
+  left: 0;
+}
+
+.output input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  margin-top: 6px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.7em;
+  text-align: right;
+}
+
+.output p {
+  width: 100%;
+  text-align: right;
+  height: 20px;
+  color: #818181;
+}
